@@ -1,0 +1,48 @@
+/* General styles for both screen and print */
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+}
+
+/* Hide elements not needed for print */
+header, .main-navigation, .sidebar, .additional-images {
+    display: none;
+}
+
+/* Main content styles for print */
+.main-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.article-box {
+    border: 1px solid #1f1d1d;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: none; /* Remove box-shadow for print */
+}
+
+/* Adjustments for print */
+@media print {
+    body {
+        background-color: #fff; /* Set a white background for print */
+    }
+
+    .article-box h3 {
+        text-decoration: none; /* Remove underline for headings in print */
+    }
+
+    .article-box img {
+        display: none; /* Hide images for print */
+    }
+
+    form {
+        max-width: none; /* Remove max-width for forms in print */
+        margin: 0;
+    }
+}

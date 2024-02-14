@@ -1,0 +1,240 @@
+/* General styles for both screen and print */
+body {
+    font-family: Arial, sans-serif;
+    color: #000; /* Set text color for print */
+    margin: 0; /* Reset margin for better consistency */
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #66c1e6;
+}
+
+.logo-container a {
+    text-decoration: none; /* Remove the default underline from the anchor tag */
+    display: flex; /* Make the anchor tag a flex container */
+    align-items: center; /* Center the content vertically */
+}
+
+.logo-container img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.logo-container h1 {
+    font-size: 50px;
+    color: aliceblue;
+    width: 200px;
+    margin: 0; /* Remove default margin to align with the image */
+}
+
+.additional-images img {
+    width: 100px; /* Adjust the width of additional images */
+    margin-right: 5px; /* Adjust the margin between additional images */
+}
+
+/* Navigation styles */
+.main-navigation {
+    background-color: #202425; /* Change this color to suit your design */
+    padding: 10px;
+    text-align: center;
+}
+
+.main-navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    display: inline-block;
+    margin-right: 50px; /* Adjust the spacing between navigation items */
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px; /* Adjust the font size */
+}
+
+.main-navigation a:hover {
+    border-bottom: 2px solid white; /* Add an underline effect on hover */
+}
+
+/* Main content and sidebar styles */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.main-content {
+    float: right;
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+/* News and article box styles */
+.news-box {
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #e7b67e;
+    box-sizing: border-box;
+}
+
+/* Updated CSS for .article-box */
+.article-box {
+    border: 1px solid #1f1d1d;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: inset -5px -5px 10px 0px rgba(237, 237, 237, 0.5), inset 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    display: block; /* Ensure the article-box is a block-level element */
+    text-decoration: none; /* Remove the underline for the anchor tag */
+    color: #040404; /* Set text color for better readability */
+}
+
+/* Updated CSS for .article-box h3 */
+.article-box h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Updated CSS for .article-box img */
+.article-box img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 10px; /* Add margin for better spacing */
+}
+
+/* Updated CSS for .article-box p */
+.article-box p {
+    color: #040404;
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    margin-bottom: 0; /* Remove default margin-bottom for paragraphs */
+}
+
+
+/* Sidebar item styles */
+.sidebar h3 {
+    font-weight: bold;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar-item h3 {
+    margin-right: 10px;
+}
+
+.sidebar-item img {
+    width: 40px;
+    height: auto;
+}
+
+.klubbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    background-color: #8fdce8;
+    font-size: 30px;
+    width: 250px;
+    height: 100px;
+    border-radius: 3px;
+    box-shadow: inset -5px -5px 10px 0px rgba(255, 255, 255, 0.5), inset 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Form and confirmation message styles */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+#confirmation-message {
+    display: none;
+    color: #4caf50;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Video styles */
+video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px 0;
+}
+
+
+
+@media print {
+    body {
+        background-color: #fff; /* Set a white background for print */
+    }
+
+    .article-box h3 {
+        text-decoration: none; /* Remove underline for headings in print */
+    }
+
+    .article-box img {
+        display: none; /* Hide images for print */
+    }
+
+    form {
+        max-width: none; /* Remove max-width for forms in print */
+        margin: 0;
+    }
+}
