@@ -8,6 +8,8 @@
 
     <title>OFK</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="randomizer.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
             <a href="index.html">
                 <h1>FotbollZ</h1>
                 <img src="fotbollz.png" alt="FotbollZ Logo">
-            </a>          
+            </a>
         </div>
     </header>
     <nav class="main-navigation">
@@ -31,40 +33,90 @@
             <li><a href="predictions.html">Predictions</a></li>
         </ul>
     </nav>
-
     <div class="clearfix">
         <div class="main-content">
-            <div class="news-box">
+            <div class="news-box" id="newsBox1">
                 <h2>Latest News</h2>
                 <a href="#article1" class="article-box">
                     <article>
                         <img src="ofk-weblogo-custom.png" alt="Sidebar Image">
                         <h3>DET SER BRA UT INFÖR SÄSONGEN FÖR ÖFK - ALLA SPELARE ÄR FRISKA</h3>
                         <div class="article-content" id="article1">
-                            Det känns bra att alla spelare i ÖFK är skadefria och kan deltaga på träningslägret i Alicante. 
+                            Det känns bra att alla spelare i ÖFK är skadefria och kan deltaga på träningslägret i Alicante.
                         </div>
                     </article>
                 </a>
-             </div>
+            </div>
+
+            <div class="news-box" id="newsBox2">
+                <h2>Träningsmatcher</h2>
+                <a href="#article2" class="article-box">
+                    <article>
+                        <img src="boll.png" alt="Sidebar Image">
+                        <h3>TRÄNINGSMATCH HERR</h3>
+                        <div class="article-content" id="article2">
+                            <p>Träningsmatcher Herr JHFF
+                                Frösö IF - IFK Östersund
+                                18:15, 4 feb. 2024
+                                ÖP-hallen</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
         </div>
-
         <div class="sidebar">
-
-              <div class="klubbar">
+            <div class="klubbar">
                 <p>Klubbar</p>
             </div>
-        
             <h3>Superettan</h3>
             <div class="sidebar-item">
                 <img src="ofk-weblogo-custom.png" alt="Sidebar Image">
                 <a href="https://superettan.se/">Östersund FK</a>
             </div>
-        
         </div>
     </div>
-
+    <input type="text" id="searchBox" placeholder="Search...">
     <footer>
         <p>Skapad av: Mohammed | © 2024</p>
     </footer>
+
+    <script>
+        $(document).ready(function () {
+            function toggleMainMenu() {
+                var mainMenu = $('.main-navigation ul');
+                mainMenu.hide();
+
+                $('.main-navigation').on('click', function () {
+                    mainMenu.slideToggle('slow');
+                });
+
+                mainMenu.on('click', function (event) {
+                    event.stopPropagation();
+                });
+            }
+
+            toggleMainMenu();
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            function makeTextTransparent1() {
+                $('#newsBox1').fadeTo('slow', 0.2);
+            }
+
+            function makeTextTransparent2() {
+                $('#newsBox2').fadeTo('slow', 0.5);
+            }
+            makeTextTransparent1();
+            makeTextTransparent2();
+
+            $('#toggleOpacityButton').on('click', function () {
+                $('#newsBox1').fadeToggle('slow');
+            });
+        });
+    </script>
 </body>
 </html>
