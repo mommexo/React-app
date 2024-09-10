@@ -8,6 +8,11 @@
 
     <title>FotbollZ</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 </head>
 <body>
 
@@ -24,9 +29,8 @@
                 <img src="fotbollz.png" alt="FotbollZ Logo">
             </a>          
         </div>
-
     </header>
-    
+
     <nav class="main-navigation">
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -62,8 +66,6 @@
                         </div>
                     </article>
                 </a>
-
-
             </div>
 
             <h2>Matchvideo</h2>
@@ -82,10 +84,10 @@
             </div>
         </div>
 
-        <button id="showMessageButton">Show Message</button>
+        <!-- React Like Button Section -->
+        <div id="like-button-container"></div>
 
         <div class="sidebar">
-
             <div class="klubbar">
                 <p>Klubbar</p>
             </div>
@@ -119,6 +121,22 @@
     <footer>
         <p>Skapad av: Mohammed | © 2024</p>
     </footer>
-    <script src="javascript.js"></script>
+
+    <!-- React Component Script -->
+    <script type="text/babel">
+        function LikeButton() {
+            const [likes, setLikes] = React.useState(0);
+
+            return (
+                <div>
+                    <button onClick={() => setLikes(likes + 1)}>
+                        Like {likes}
+                    </button>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<LikeButton />, document.getElementById('like-button-container'));
+    </script>
 </body>
 </html>
